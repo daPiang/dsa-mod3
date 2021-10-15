@@ -92,6 +92,7 @@ public class Mod3Assessment_GUI extends javax.swing.JFrame {
         pending_list.setColumns(20);
         pending_list.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         pending_list.setRows(5);
+        pending_list.setEditable(false);
         jScrollPane2.setViewportView(pending_list);
 
         clear_button.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
@@ -126,7 +127,7 @@ public class Mod3Assessment_GUI extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Number of people");
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\NetBeans-12.4\\netbeans_projects\\mod3assessment\\assets\\logo_adjusted.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("src\\images\\logo_adjusted.png")); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -253,7 +254,7 @@ public class Mod3Assessment_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_exit_buttonActionPerformed
 
     private void contact_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contact_numberActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_contact_numberActionPerformed
 
     private void dequeue_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dequeue_buttonActionPerformed
