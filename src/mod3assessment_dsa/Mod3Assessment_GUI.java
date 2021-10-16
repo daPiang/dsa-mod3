@@ -92,6 +92,7 @@ public class Mod3Assessment_GUI extends javax.swing.JFrame {
         pending_list.setColumns(20);
         pending_list.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         pending_list.setRows(5);
+        pending_list.setText("Queue is empty!");
         pending_list.setEditable(false);
         jScrollPane2.setViewportView(pending_list);
 
@@ -128,7 +129,7 @@ public class Mod3Assessment_GUI extends javax.swing.JFrame {
         jLabel4.setText("Number of people");
 
         jLabel7.setIcon(new javax.swing.ImageIcon("src\\images\\logo_adjusted.png")); // NOI18N
-
+        
         jLabel5.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Customer Name");
@@ -223,17 +224,19 @@ public class Mod3Assessment_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_customer_nameActionPerformed
 
     private void enqueue_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enqueue_buttonActionPerformed
-        if(q.display()=="Queue is empty!"){
+        //if(q.display()=="Queue is empty!"){
+        if(isFieldValid(customer_name.getText(), contact_number.getText(), num_of_people.getText(), res_time.getText())==true) {
+            String details = customer_name.getText()+"\n"+contact_number.getText()+"\n"+num_of_people.getText()+"\n"+res_time.getText();
+            q.enqueue(details+"\nQueue Number: "+(queue_number)+"\n-----------------------------\n");
+            customer_name.setText("");
+            contact_number.setText("");
+            num_of_people.setText("");
+            res_time.setText("");
+            pending_list.setText(q.display());
+            queue_number++;
+        }else{
             queue_number = 1;
         }
-        String details = customer_name.getText()+"\n"+contact_number.getText()+"\n"+num_of_people.getText()+"\n"+res_time.getText();
-        q.enqueue(details+"\nQueue Number: "+(queue_number)+"\n-----------------------------\n");
-        customer_name.setText("");
-        contact_number.setText("");
-        num_of_people.setText("");
-        res_time.setText("");
-        pending_list.setText(q.display());
-        queue_number++;
     }//GEN-LAST:event_enqueue_buttonActionPerformed
 
     private void clear_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear_buttonActionPerformed
@@ -325,5 +328,25 @@ public class Mod3Assessment_GUI extends javax.swing.JFrame {
 
     private void setIconImage() {
          setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("logo.png")));
+    }
+
+    private boolean isFieldValid(String name, String number, String people, String time) {
+        if(name.isEmpty()){
+            return false;
+        }else{
+            if(number.isEmpty()){
+                return false;
+            }else{
+                if(people.isEmpty()){
+                    return false;
+                }else{
+                    if(time.isEmpty()){
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }
+            }
+        }
     }
 }
