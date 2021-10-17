@@ -331,22 +331,10 @@ public class Mod3Assessment_GUI extends javax.swing.JFrame {
     }
 
     private boolean isFieldValid(String name, String number, String people, String time) {
-        if(name.isEmpty()){
+        if(name.isEmpty() | number.isEmpty() | people.isEmpty() | time.isEmpty()){
             return false;
         }else{
-            if(number.isEmpty()){
-                return false;
-            }else{
-                if(people.isEmpty()){
-                    return false;
-                }else{
-                    if(time.isEmpty()){
-                        return false;
-                    }else{
-                        return true;
-                    }
-                }
-            }
+            return true;
         }
     }
 }
