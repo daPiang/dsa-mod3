@@ -118,7 +118,7 @@ public class Mod3Assessment_GUI extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Reservation Time");
+        jLabel2.setText("Notes");
 
         jLabel3.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
