@@ -224,7 +224,9 @@ public class Mod3Assessment_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_customer_nameActionPerformed
 
     private void enqueue_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enqueue_buttonActionPerformed
-        //if(q.display()=="Queue is empty!"){
+        if(q.display()=="Queue is empty!"){
+		queue_number = 1;
+	}
         if(isFieldValid(customer_name.getText(), contact_number.getText(), num_of_people.getText(), res_time.getText())==true) {
             String details = customer_name.getText()+"\n"+contact_number.getText()+"\n"+num_of_people.getText()+"\n"+res_time.getText();
             q.enqueue(details+"\nQueue Number: "+(queue_number)+"\n-----------------------------\n");
